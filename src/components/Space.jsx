@@ -2,7 +2,6 @@ import React, { useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 import Slider from './Slider';
 import Content from './Content';
-import PropTypes from 'prop-types';
 
 import SpaceMain from '../images/space/Space.png';
 import SpaceMainMobile from '../images/space/Space-mobile.png';

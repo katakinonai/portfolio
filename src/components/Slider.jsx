@@ -1,10 +1,9 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { motion } from 'framer-motion';
-import 'swiper/css';
-import 'swiper/css/navigation';
 import { Navigation } from 'swiper';
 import PropTypes from 'prop-types';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const Slider = ({ ImagesDesktop, ImagesMobile }) => {
   return (

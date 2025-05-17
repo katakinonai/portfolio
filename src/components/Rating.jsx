@@ -2,7 +2,6 @@ import React, { useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 import Slider from './Slider';
 import Content from './Content';
-import PropTypes from 'prop-types';
 
 import RatingMain from '../images/interactive rating component/interactive-rating-component-rating.png';
 import RatingThankYou from '../images/interactive rating component/interactive-rating-component-thank-you.png';

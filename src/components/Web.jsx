@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Divider from './Divider';
 import Card from './Card';
 import { CardsData } from './CardsData';
-import { IoMdHeartEmpty } from 'react-icons/io';
 import { motion } from 'framer-motion';
 import textAnimationX from './animations/textAnimationX';
 import Content from './Content';

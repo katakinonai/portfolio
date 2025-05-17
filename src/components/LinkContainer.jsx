@@ -1,6 +1,5 @@
 import React from 'react';
 import * as FaIcons from 'react-icons/fa';
-import PropTypes from 'prop-types';
 
 const LinkContainer = () => {
   return (

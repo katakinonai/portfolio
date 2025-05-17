@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import textAnimationX from './animations/textAnimationX';
 import Content from './Content';
 import Divider from './Divider';
-import PropTypes from 'prop-types';
 
 const Resume = () => {
   useLayoutEffect(() => {

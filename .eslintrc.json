@@ -25,9 +25,16 @@
     "import/resolver": {
       "node": {
         "paths": ["src"],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".css"]
       }
     }
   },
-  "rules": {}
+  "rules": {
+    "import/no-unresolved": ["error", { 
+      "ignore": [
+        "^swiper/.*",
+        "^swiper/css/.*"
+      ]
+    }]
+  }
 }

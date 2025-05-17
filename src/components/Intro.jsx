@@ -2,7 +2,6 @@ import React, { useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 import Slider from './Slider';
 import Content from './Content';
-import PropTypes from 'prop-types';
 
 import IntroDesktop from '../images/intro section/intro-desktop.png';
 import IntroDesktopToggled from '../images/intro section/intro-desktop-toggled.png';

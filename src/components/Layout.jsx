@@ -5,7 +5,6 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
 import Footer from './Footer';
-import PropTypes from 'prop-types';
 
 const Layout = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -50,7 +49,7 @@ const Layout = () => {
 
   return (
     <div>
-      <div className="navbar">
+      <div className={`navbar ${!show ? 'hidden' : ''}`}>
         <Link className="menu-bars active" to="#" onClick={showSidebar}>
           <FaIcons.FaBars className="navbar-show" />
         </Link>
