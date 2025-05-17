@@ -11,6 +11,7 @@ $clr-neutral-100: hsl(195, 31%, 75%);
 $clr-neutral-200: #064663;
 $clr-neutral-300: #04293a;
 $clr-neutral-400: #041C32;
+$clr-white: #fff;
 
 $clr-accent-100: #ECB365;
 $clr-accent-200: #ebcda2;
@@ -20,6 +21,33 @@ $clr-neutral-300-trsp: rgb(4, 41, 58, .75);
 $clr-neutral-200-trsp: rgb(0, 70, 99, .75);
 $clr-accent-100-trsp: rgb(236, 179, 101, .75);
 $clr-accent-200-trsp: rgb(235, 205, 162, .75);
+
+// Layout
+$nav-width: 250px;
+$nav-height: 80px;
+$border-radius-lg: 30px;
+$border-radius-sm: 10px;
+$z-index-nav: 9999;
+$z-index-menu: 9990;
+
+// Transitions
+$transition-fast: 200ms;
+$transition-medium: 350ms;
+$transition-slow: 850ms;
+
+// ==========================================================================
+// Mixins
+// ==========================================================================
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin backdrop-blur {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
 
 // ==========================================================================
 // Base Styles
@@ -140,6 +168,23 @@ a {
     &:hover {
         color: $clr-accent-100;
         transition: 200ms;
+    }
+}
+
+.nav-menu {
+    @include flex-center;
+    background: linear-gradient(100deg, $clr-neutral-200-trsp, $clr-neutral-300-trsp);
+    @include backdrop-blur;
+    border-radius: $border-radius-lg;
+    padding-block: 1rem;
+    margin: 2rem 0;
+    transition: $transition-slow;
+    z-index: $z-index-nav;
+
+    &.active {
+        left: 0;
+        margin-inline: 0;
+        transition: $transition-medium;
     }
 }
 
@@ -357,7 +402,11 @@ a {
 // ==========================================================================
 // Media Queries
 // ==========================================================================
-@media(max-width: 1000px) {
+$breakpoint-mobile: 1000px;
+$breakpoint-tablet: 1600px;
+$breakpoint-desktop: 1800px;
+
+@media (max-width: $breakpoint-mobile) {
     body {
         display: flex;
         flex-direction: column;
@@ -389,65 +438,18 @@ a {
 
     .nav-menu {
         background-color: $clr-neutral-300;
-        width: 250px;
+        width: $nav-width;
         height: 100vh;
-        display: flex;
-        justify-content: center;
         position: fixed;
         top: 0;
         left: -100%;
-        transition: 850ms;
-        z-index: 9999;
-
-        &.active {
-            left: 0;
-            margin-inline: 0;
-            transition: 350ms;
-            z-index: 9999;
-        }
-    }
-
-    .nav-text {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        padding: 8px 0px 8px 16px;
-        list-style: none;
-        height: 60px;
-        margin-bottom: 1rem;
-
-        span {
-            margin-left: 16px;
-        }
-
-        a {
-            text-decoration: none;
-            color: $clr-neutral-100;
-            font-size: 18px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            padding: 30px 30px;
-            padding-right: 2rem;
-            border-radius: 4px;
-
-            &:hover {
-                background-color: $clr-neutral-200;
-            }
-        }
-    }
-
-    .nav-links {
-        width: 100%;
     }
 
     .navbar-toggle {
         background-color: $clr-neutral-300;
         width: 100%;
-        height: 80px;
-        display: flex;
-        justify-content: start;
-        align-items: center;
+        height: $nav-height;
+        @include flex-center;
     }
 
     .navbar-show {
@@ -521,7 +523,7 @@ a {
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: $breakpoint-mobile) {
     h1 { font-size: 5rem; }
     h2 { font-size: 4rem; }
     h3 { font-size: 2.5rem; }
@@ -594,22 +596,17 @@ a {
     }
 }
 
-@media(max-width: 1600px) {
+@media (max-width: $breakpoint-tablet) {
     .nav-menu {
         margin-inline: clamp(10%, 20%, 25%);
     }
 }
 
-@media (800px < width < 1800px) {
+@media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-desktop) {
     .cards-container {
         display: grid;
         justify-content: center;
         margin-inline: auto;
         grid: repeat(2, 24rem) / auto-flow 22rem;
-
-        .card {
-            min-width: 16rem;
-            max-width: 25rem;
-        }
     }
 }
