@@ -1,19 +1,19 @@
-import { Link, useMatch } from "react-router-dom";
+import { Link, useMatch } from 'react-router-dom';
 
-const CustomLink = ({ children, to, ...props}) => {
-    const match = useMatch();
+const CustomLink = ({ children, to, ...props }) => {
+  const match = useMatch();
 
-    return (
-        <Link 
-            to={to}
-            style={{
-                color: match ? "var(--clr-active)" : white,
-            }} 
-            {...props}
-        >
-            {children}
-        </Link>
-    );
-}
+  return (
+    <Link
+      to={to}
+      style={{
+        color: match ? 'var(--clr-active)' : white,
+      }}
+      {...props}
+    >
+      {children}
+    </Link>
+  );
+};
 
 export default CustomLink;

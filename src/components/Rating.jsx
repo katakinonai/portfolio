@@ -1,21 +1,19 @@
-import React, { useLayoutEffect } from "react";
-import { motion } from "framer-motion";
-import Slider from "./Slider";
-import Content from "./Content";
+import React, { useLayoutEffect } from 'react';
+import { motion } from 'framer-motion';
+import Slider from './Slider';
+import Content from './Content';
+import PropTypes from 'prop-types';
 
-import RatingMain from "../images/interactive rating component/interactive-rating-component-rating.png";
-import RatingThankYou from "../images/interactive rating component/interactive-rating-component-thank-you.png";
+import RatingMain from '../images/interactive rating component/interactive-rating-component-rating.png';
+import RatingThankYou from '../images/interactive rating component/interactive-rating-component-thank-you.png';
 
-const ImagesDesktop = [
-  RatingMain,
-  RatingThankYou,
-];
+const ImagesDesktop = [RatingMain, RatingThankYou];
 
 const ImagesMobile = [];
 
 export default function App() {
   useLayoutEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   });
 
   return (
@@ -36,12 +34,11 @@ export default function App() {
       <p>{Content[5].text[1].content}</p>
       <ul>
         {Content[5].text[2].content.map((item) => {
-          return (
-            <li key={item.id}>{item.content}</li>
-          )
+          return <li key={item.id}>{item.content}</li>;
         })}
       </ul>
-
     </motion.div>
   );
 }
+
+App.propTypes = {};

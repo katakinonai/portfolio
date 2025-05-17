@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 const Divider = () => {
   return (
@@ -6,7 +6,8 @@ const Divider = () => {
       <div className="divider div-transparent"></div>
     </div>
   );
-}
+};
+
+Divider.propTypes = {};
 
 export default Divider;
-

@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Stars from "../images/stars.png";
-import LinkContainer from "./LinkContainer";
+import React from 'react';
+import Stars from '../images/stars.png';
+import LinkContainer from './LinkContainer';
+
 
 function Footer() {
   const currentDate = new Date().getFullYear();
@@ -11,7 +11,9 @@ function Footer() {
       <p>{currentDate} Ro Sharp</p>
       <LinkContainer />
     </div>
-  )
+  );
 }
 
-export default Footer
+Footer.propTypes = {};
+
+export default Footer;

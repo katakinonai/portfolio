@@ -3,11 +3,11 @@ const textAnimationY = {
     y: -100,
     opacity: 0,
   },
-  visible: custom => ({
+  visible: (custom) => ({
     y: 0,
     opacity: 1,
     transition: { delay: custom * 0.25 },
   }),
-}
+};
 
 export default textAnimationY;

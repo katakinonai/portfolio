@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -11,18 +12,18 @@ h2,
 h3,
 p {
   margin: 0;
-  font-family: "Epilogue", sans-serif;
+  font-family: Epilogue, sans-serif;
   line-height: 1.5;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Epilogue", sans-serif;
+  font-family: Epilogue, sans-serif;
   font-weight: 700;
   line-height: 1;
   font-size: 4rem;
-  color: #ECB365;
+  color: #ecb365;
   margin-bottom: 1.25rem;
 }
 
@@ -37,7 +38,7 @@ ul {
 
 a {
   color: inherit;
-  font-family: "Epilogue", sans-serif;
+  font-family: Epilogue, sans-serif;
   text-decoration: inherit;
 }
 
@@ -59,11 +60,11 @@ a {
   z-index: 1000;
 }
 
-.overlay:after {
+.overlay::after {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(0 0 0 / 50%);
   left: 0;
   top: 0;
   z-index: 0;
@@ -93,18 +94,17 @@ a {
   text-align: center;
   font-size: 18px;
   background: #fff;
+
   /* Center slide text vertically */
   display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  display: flexbox;
+  display: flex;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
 }
 
@@ -126,19 +126,19 @@ a {
   height: 1px;
 }
 
-.div-transparent:before {
-  content: "";
+.div-transparent::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0%;
   right: 0%;
   width: 100%;
   height: 1.5px;
-  background-image: linear-gradient(to right, transparent, #ECB365, transparent);
+  background-image: linear-gradient(to right, transparent, #ecb365, transparent);
 }
 
 body {
-  background: #041C32;
+  background: #041c32;
 }
 
 .header-btn {
@@ -150,23 +150,28 @@ body {
   cursor: pointer;
   transition: 200ms;
 }
+
 .header-btn .header-icon {
   font-size: 2rem;
 }
+
 .header-btn:hover {
-  color: #ECB365;
+  color: #ecb365;
   transition: 200ms;
 }
 
 .header-home {
   text-align: center;
 }
+
 .header-home h1 {
   margin-bottom: 1rem;
 }
+
 .header-home h1 span {
   display: block;
 }
+
 .header-home .avatar-img {
   object-fit: contain;
   max-width: 8rem;
@@ -178,11 +183,13 @@ body {
   display: grid;
   justify-content: center;
 }
+
 .footer p {
   margin-bottom: 2rem;
   justify-self: center;
   color: #064663;
 }
+
 .footer img {
   object-fit: contain;
   justify-self: center;
@@ -190,7 +197,7 @@ body {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 1000px) {
+@media (width <= 1000px) {
   .hidden {
     position: fixed;
     top: -5rem;
@@ -211,7 +218,7 @@ body {
   }
 
   .nav-menu {
-    background-color: #04293A;
+    background-color: #04293a;
     width: 250px;
     height: 100vh;
     display: flex;
@@ -232,14 +239,16 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
-    padding: 8px 0px 8px 16px;
+    padding: 8px 0 8px 16px;
     list-style: none;
     height: 60px;
     margin-bottom: 1rem;
   }
+
   .nav-text span {
     margin-left: 16px;
   }
+
   .nav-text a {
     text-decoration: none;
     color: #abc9d3;
@@ -250,6 +259,7 @@ body {
     padding: 0 16px;
     border-radius: 4px;
   }
+
   .nav-text a:hover {
     background-color: #064663;
   }
@@ -259,7 +269,7 @@ body {
   }
 
   .navbar-toggle {
-    background-color: #04293A;
+    background-color: #04293a;
     width: 100%;
     height: 80px;
     display: flex;
@@ -275,6 +285,7 @@ body {
   .header-home {
     padding-top: 20vh;
   }
+
   .header-home .header-btn-container {
     margin-top: 5rem;
   }
@@ -294,13 +305,14 @@ body {
   .projects {
     display: grid;
     justify-content: center;
-    grid: repeat(2, 12rem)/auto-flow 11rem;
+    grid: repeat(2, 12rem) / auto-flow 11rem;
   }
 
   .footer-btn-container {
     margin-bottom: 2rem;
   }
 }
+
 nav {
   background-color: red;
 }

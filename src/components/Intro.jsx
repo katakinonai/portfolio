@@ -1,28 +1,22 @@
-import React, { useLayoutEffect } from "react";
-import { motion } from "framer-motion";
-import Slider from "./Slider";
-import Content from "./Content";
+import React, { useLayoutEffect } from 'react';
+import { motion } from 'framer-motion';
+import Slider from './Slider';
+import Content from './Content';
+import PropTypes from 'prop-types';
 
-import IntroDesktop from "../images/intro section/intro-desktop.png";
-import IntroDesktopToggled from "../images/intro section/intro-desktop-toggled.png";
-import IntroMobile from "../images/intro section/intro-mobile.png";
-import IntroMobileNav from "../images/intro section/intro-mobile-nav.png";
-import IntroNavToggled from "../images/intro section/intro-nav-toggled.png";
+import IntroDesktop from '../images/intro section/intro-desktop.png';
+import IntroDesktopToggled from '../images/intro section/intro-desktop-toggled.png';
+import IntroMobile from '../images/intro section/intro-mobile.png';
+import IntroMobileNav from '../images/intro section/intro-mobile-nav.png';
+import IntroNavToggled from '../images/intro section/intro-nav-toggled.png';
 
-const ImagesDesktop = [
-  IntroDesktop,
-  IntroDesktopToggled,
-];
+const ImagesDesktop = [IntroDesktop, IntroDesktopToggled];
 
-const ImagesMobile = [
-  IntroMobile,
-  IntroMobileNav,
-  IntroNavToggled,
-];
+const ImagesMobile = [IntroMobile, IntroMobileNav, IntroNavToggled];
 
 export default function App() {
   useLayoutEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   });
 
   return (
@@ -43,11 +37,11 @@ export default function App() {
       <p>{Content[4].text[1].content}</p>
       <ul>
         {Content[4].text[2].content.map((item) => {
-          return (
-            <li key={item.id}>{item.content}</li>
-          )
+          return <li key={item.id}>{item.content}</li>;
         })}
       </ul>
     </motion.div>
   );
 }
+
+App.propTypes = {};
