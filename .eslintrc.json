@@ -30,11 +30,11 @@
     }
   },
   "rules": {
-    "import/no-unresolved": ["error", { 
-      "ignore": [
-        "^swiper/.*",
-        "^swiper/css/.*"
-      ]
-    }]
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": ["^swiper/.*", "^swiper/css/.*"]
+      }
+    ]
   }
 }

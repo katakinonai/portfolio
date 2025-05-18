@@ -75,7 +75,7 @@ const Layout = () => {
         </ul>
       </nav>
 
-      <div className="App">
+      <div className="app">
         <Outlet />
       </div>
 

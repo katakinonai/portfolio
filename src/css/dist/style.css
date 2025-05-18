@@ -74,7 +74,7 @@ a {
   color: #6ba6b3;
 }
 
-.App {
+.app {
   padding-inline: clamp(4rem, 20vw, 20rem);
 }
 
@@ -97,8 +97,6 @@ a {
 
   /* Center slide text vertically */
   display: -webkit-box;
-  display: flexbox;
-  display: flex;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;

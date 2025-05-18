@@ -3,25 +3,25 @@
 // ==========================================================================
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
 
-// Typography
-$Epilogue: "Epilogue", sans-serif;Typography$Epilogue
+$Epilogue: 'Epilogue', sans-serif;
+
 // Colors
-$clr-neutral-100: hsl(195deg 31% 75%);Colors$clr-neutral-100
+$clr-neutral-100: hsl(195deg 31% 75%);
 $clr-neutral-200: #064663;
 $clr-neutral-300: #04293a;
-$clr-neutral-400: #041C32;
+$clr-neutral-400: #041c32;
 $clr-white: #fff;
-$clr-accent-100: #ECB365;
+$clr-accent-100: #ecb365;
 $clr-accent-200: #ebcda2;
 
 // Transparent Colors
-$clr-neutral-300-trsp: rgb(4 41 58 / 75%);TransparentColors$clr-neutral-300-trsp
 $clr-neutral-200-trsp: rgb(0 70 99 / 75%);
+$clr-neutral-300-trsp: rgb(4 41 58 / 75%);
 $clr-accent-100-trsp: rgb(236 179 101 / 75%);
 $clr-accent-200-trsp: rgb(235 205 162 / 75%);
 
 // Layout
-$nav-width: 250px;Layout$nav-width
+$nav-width: 250px;
 $nav-height: 80px;
 $border-radius-lg: 30px;
 $border-radius-sm: 10px;
@@ -29,21 +29,26 @@ $z-index-nav: 9999;
 $z-index-menu: 9990;
 
 // Transitions
-$transition-fast: 200ms;Transitions$transition-fast
+$transition-fast: 200ms;
 $transition-medium: 350ms;
 $transition-slow: 850ms;
+
+// Breakpoints
+$breakpoint-mobile: 1000px;
+$breakpoint-tablet: 1600px;
+$breakpoint-desktop: 1800px;
 
 // ==========================================================================
 // Mixins
 // ==========================================================================
 @mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin backdrop-blur {
-    backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 // ==========================================================================
@@ -52,564 +57,583 @@ $transition-slow: 850ms;
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background: $clr-neutral-400;
-    height: 100vh;
-    margin: 0;
-    font-family: $Epilogue;
-    line-height: 1.5;
+  background: $clr-neutral-400;
+  height: 100vh;
+  margin: 0;
+  font-family: $Epilogue;
+  line-height: 1.5;
 }
 
-h1, h2, h3 {
-    font-family: $Epilogue;
-    font-weight: 700;
-    line-height: 1;
-    color: $clr-accent-100;
-    margin-bottom: 1.25rem;
+h1,
+h2,
+h3 {
+  font-family: $Epilogue;
+  font-weight: 700;
+  line-height: 1;
+  color: $clr-accent-100;
+  margin-bottom: 1.25rem;
 }
 
-p, li {
-    color: $clr-neutral-100;
+p,
+li {
+  color: $clr-neutral-100;
 }
 
 ul {
-    padding: 0;
+  padding: 0;
 }
 
 a {
-    color: inherit;
-    font-family: $Epilogue;
-    text-decoration: inherit;
+  color: inherit;
+  font-family: $Epilogue;
+  text-decoration: inherit;
 }
 
 // ==========================================================================
 // Scrollbar Styles
 // ==========================================================================
 ::-webkit-scrollbar {
-    width: 9px;
+  width: 9px;
 }
 
 ::-webkit-scrollbar-button {
-    width: 9px;
-    height: 5px;
+  width: 9px;
+  height: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: $clr-neutral-400;
+  background: $clr-neutral-400;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: $clr-neutral-300;
-    width: 8px;
+  background: $clr-neutral-300;
+  width: 8px;
 }
 
 :root {
-    overflow-y: scroll;
-    scrollbar-color: $clr-neutral-300 $clr-neutral-400;
-    scrollbar-width: thin;
+  overflow-y: scroll;
+  scrollbar-color: $clr-neutral-300 $clr-neutral-400;
+  scrollbar-width: thin;
 }
 
 // ==========================================================================
 // Layout Components
 // ==========================================================================
 .App {
-    padding-inline: clamp(4rem, 20vw, 20rem);
+  padding-inline: clamp(4rem, 20vw, 20rem);
 }
 
 .wrapper {
-    padding-bottom: 90px;
+  padding-bottom: 90px;
 }
 
 .divider {
-    position: relative;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
-    height: 1px;
+  position: relative;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  height: 1px;
 }
 
 .div-transparent::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0%;
-    right: 0%;
-    width: 100%;
-    height: 1.5px;
-    background-image: linear-gradient(to right, transparent, $clr-accent-100, transparent);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0%;
+  right: 0%;
+  width: 100%;
+  height: 1.5px;
+  background-image: linear-gradient(to right, transparent, $clr-accent-100, transparent);
 }
 
 // ==========================================================================
 // Navigation
 // ==========================================================================
 .active {
-    color: hsl(191deg 32% 56%);
+  color: hsl(191deg 32% 56%);
 }
 
 .link-btn {
-    background: none;
-    color: $clr-neutral-200;
-    border: none;
-    padding: 0;
-    margin: 0;
-    margin-inline: clamp(.75rem, 1vh, 3rem);
-    cursor: pointer;
+  background: none;
+  color: $clr-neutral-200;
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-inline: clamp(0.75rem, 1vh, 3rem);
+  cursor: pointer;
+  transition: 200ms;
+
+  .link-icon {
+    font-size: 2rem;
+  }
+
+  &:hover {
+    color: $clr-accent-100;
     transition: 200ms;
-
-    .link-icon {
-        font-size: 2rem;
-    }
-
-    &:hover {
-        color: $clr-accent-100;
-        transition: 200ms;
-    }
+  }
 }
 
 .nav-menu {
-    @include flex-center;
+  @include flex-center;
 
-    background: linear-gradient(100deg, $clr-neutral-200-trsp, $clr-neutral-300-trsp);
+  background: linear-gradient(100deg, $clr-neutral-200-trsp, $clr-neutral-300-trsp);
 
-    @include backdrop-blur;
+  @include backdrop-blur;
 
-    border-radius: $border-radius-lg;
-    padding-block: 1rem;
-    margin: 2rem 0;
-    transition: $transition-slow;
-    z-index: $z-index-nav;
+  border-radius: $border-radius-lg;
+  padding-block: 1rem;
+  margin: 2rem 0;
+  transition: $transition-slow;
+  z-index: $z-index-nav;
 
-    &.active {
-        left: 0;
-        margin-inline: 0;
-        transition: $transition-medium;
-    }
+  &.active {
+    left: 0;
+    margin-inline: 0;
+    transition: $transition-medium;
+  }
 }
 
 // ==========================================================================
 // Header Styles
 // ==========================================================================
 .header-home {
-    text-align: center;
+  text-align: center;
 
-    h1 {
-        margin-bottom: 1rem;
-        
-        span {
-            display: block;
-        }
-    }
+  h1 {
+    margin-bottom: 1rem;
 
-    .avatar-img {
-        object-fit: contain;
-        max-width: 8rem;
-        border-radius: 50%;
-        margin-block: 1rem;
+    span {
+      display: block;
     }
+  }
 
-    .link-btn-container {
-        margin-top: 1rem;
-    }
+  .avatar-img {
+    object-fit: contain;
+    max-width: 8rem;
+    border-radius: 50%;
+    margin-block: 1rem;
+  }
+
+  .link-btn-container {
+    margin-top: 1rem;
+  }
 }
 
 // ==========================================================================
 // Card Components
 // ==========================================================================
 .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    background: linear-gradient(100deg, $clr-neutral-200-trsp, $clr-neutral-300-trsp);
-    backdrop-filter: blur(8px);
-    border-radius: 30px;
-    height: 23rem;
-    min-width: 20rem;
-    max-width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background: linear-gradient(100deg, $clr-neutral-200-trsp, $clr-neutral-300-trsp);
+  backdrop-filter: blur(8px);
+  border-radius: 30px;
+  height: 23rem;
+  min-width: 20rem;
+  max-width: 30rem;
 
-    h3 {
-        line-height: 1;
-    }
+  h3 {
+    line-height: 1;
+  }
 
-    img {
-        position: relative;
-    }
+  img {
+    position: relative;
+  }
 }
 
 .card-btn {
-    background: $clr-accent-100;
-    color: $clr-neutral-200;
-    border: none;
-    border-radius: 10px;
-    padding: .5rem 2rem;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
+  background: $clr-accent-100;
+  color: $clr-neutral-200;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 
-    &:hover {
-        background: linear-gradient(100deg, $clr-accent-200, $clr-accent-100);
+  &:hover {
+    background: linear-gradient(100deg, $clr-accent-200, $clr-accent-100);
 
-        --underline-width: 100%;
+    --underline-width: 100%;
 
-        transition: background 300ms;
-    }
+    transition: background 300ms;
+  }
 
-    span {
-        background: linear-gradient($clr-neutral-400 0 0) bottom left/ var(--underline-width, 0%) 0.1em no-repeat;
-        padding-left: 7px;
-        transition: background-size 0.5s;
-    }
+  span {
+    background: linear-gradient($clr-neutral-400 0 0) bottom left/ var(--underline-width, 0%) 0.1em
+      no-repeat;
+    padding-left: 7px;
+    transition: background-size 0.5s;
+  }
 }
 
 // ==========================================================================
 // Swiper/Slider Styles
 // ==========================================================================
 .swiper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-wrapper {
-    width: 480px;
+  width: 480px;
 }
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    width: 100%;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
 
-    img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .mobile-slide {
-    max-height: 40rem;
-    max-width: 20rem;
-    object-fit: contain;
+  max-height: 40rem;
+  max-width: 20rem;
+  object-fit: contain;
 }
 
 // ==========================================================================
 // Project Page Styles
 // ==========================================================================
 .project-page {
+  p {
+    padding-block: 0.2rem;
+  }
+
+  h1 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .project-header {
+    text-align: center;
+    align-items: center;
+    margin-inline: auto;
+    padding-block: 1rem;
+
     p {
-        padding-block: .2rem;
+      color: $clr-accent-200;
+      padding-bottom: 1rem;
     }
+  }
 
-    h1 {
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-
-    .project-header {
-        text-align: center;
-        align-items: center;
-        margin-inline: auto;
-        padding-block: 1rem;
-
-        p {
-            color: $clr-accent-200;
-            padding-bottom: 1rem;
-        }
-    }
-
-    .swiper {
-        padding-bottom: 1rem;
-    }
+  .swiper {
+    padding-bottom: 1rem;
+  }
 }
 
 // ==========================================================================
 // Resume Styles
 // ==========================================================================
 .resume {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  align-items: center;
+  padding-bottom: 7vw;
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+    margin-block: 0;
+    padding-block: 0;
+  }
+
+  h2 {
+    margin-block: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-block: 0.7rem;
+  }
+
+  .divider,
+  .wrapper {
+    margin-block: 0;
+    padding: 0;
+  }
+
+  .divider {
+    max-width: 20rem;
+    align-self: center;
     margin-inline: auto;
-    align-items: center;
-    padding-bottom: 7vw;
+  }
 
-    h1, h2, h3 {
-        text-align: center;
-        margin-block: 0;
-        padding-block: 0;
-    }
+  .wrapper {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 
-    h2 {
-        margin-block: 1.5rem;
-        font-size: 2.5rem;
-    }
-
-    h3 {
-        font-size: 1.25rem;
-        margin-block: .7rem;
-    }
-
-    .divider,
-    .wrapper {
-        margin-block: 0;
-        padding: 0;
-    }
-
-    .divider {
-        max-width: 20rem;
-        align-self: center;
-        margin-inline: auto;
-    }
-
-    .wrapper {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    .education {
-        text-align: center;
-    }
+  .education {
+    text-align: center;
+  }
 }
 
 // ==========================================================================
 // Footer Styles
 // ==========================================================================
 .footer {
-    display: grid;
-    justify-content: center;
-    margin-top: 5rem;
+  display: grid;
+  justify-content: center;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+
+  p {
     margin-bottom: 2rem;
+    justify-self: center;
+    color: $clr-neutral-200;
+  }
 
-    p {
-        margin-bottom: 2rem;
-        justify-self: center;
-        color: $clr-neutral-200;
-    }
-
-    img {
-        object-fit: contain;
-        justify-self: center;
-        max-width: 3rem;
-        margin-bottom: 1rem;
-    }
+  img {
+    object-fit: contain;
+    justify-self: center;
+    max-width: 3rem;
+    margin-bottom: 1rem;
+  }
 }
 
 // ==========================================================================
 // Media Queries
 // ==========================================================================
-$breakpoint-mobile: 1000px;MediaQueries$breakpoint-mobile
-$breakpoint-tablet: 1600px;
-$breakpoint-desktop: 1800px;
-
 @media (max-width: $breakpoint-mobile) {
-    body {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .App {
+    padding-inline: clamp(0.5rem, 3vh, 2rem);
+    overflow: hidden;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  .active {
+    position: absolute;
+    top: 2rem;
+    transition: 200ms;
+  }
+
+  .menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+    color: $clr-accent-200;
+    z-index: 9990;
+  }
+
+  .nav-menu {
+    background-color: $clr-neutral-300;
+    width: $nav-width;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+  }
+
+  .navbar-toggle {
+    background-color: $clr-neutral-300;
+    width: 100%;
+    height: $nav-height;
+
+    @include flex-center;
+  }
+
+  .navbar-show {
+    height: 2rem;
+    transition: 200ms;
+  }
+
+  .header-home {
+    padding-top: 20vh;
+  }
+
+  .avatar-img {
+    padding-top: 0.5rem;
+  }
+
+  .header-p p {
+    color: $clr-neutral-200;
+  }
+
+  .projects {
+    display: grid;
+    justify-content: center;
+    grid: repeat(2, 12rem) / auto-flow 11rem;
+  }
+
+  .project-page .project-header {
+    padding-block-start: 16vh;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: center;
+
+    > * {
+      margin-block: 1rem;
+    }
+  }
+
+  .card {
+    padding: 1rem 0;
+    min-width: 18rem;
+    max-width: 21rem;
+    min-height: 21rem;
+    border-radius: 30px;
+
+    img {
+      max-width: clamp(8rem, 20vw, 15rem);
+      margin-bottom: 1rem;
     }
 
-    .App {
-        padding-inline: clamp(.5rem, 3vh, 2rem);
-        overflow: hidden;
+    h3 {
+      margin-bottom: 1rem;
     }
 
-    h1 { font-size: 4rem; }
-    h2 { font-size: 3rem; }
-    h3 { font-size: 2rem; }
+    p {
+      margin-inline: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
 
-    .active {
-        position: absolute;
-        top: 2rem;
-        transition: 200ms;
+  .resume {
+    h1 {
+      margin-top: 8rem;
     }
 
-    .menu-bars {
-        margin-left: 2rem;
-        font-size: 2rem;
-        background: none;
-        color: $clr-accent-200;
-        z-index: 9990;
+    li {
+      margin-inline-start: 1rem;
     }
-
-    .nav-menu {
-        background-color: $clr-neutral-300;
-        width: $nav-width;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: -100%;
-    }
-
-    .navbar-toggle {
-        background-color: $clr-neutral-300;
-        width: 100%;
-        height: $nav-height;
-
-        @include flex-center;
-    }
-
-    .navbar-show {
-        height: 2rem;
-        transition: 200ms;
-    }
-
-    .header-home {
-        padding-top: 20vh;
-    }
-
-    .avatar-img {
-        padding-top: .5rem;
-    }
-
-    .header-p p {
-        color: $clr-neutral-200;
-    }
-
-    .projects {
-        display: grid;
-        justify-content: center;
-        grid: repeat(2, 12rem) / auto-flow 11rem;
-    }
-
-    .project-page .project-header {
-        padding-block-start: 16vh;
-    }
-
-    .cards-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-inline: center;
-
-        > * {
-            margin-block: 1rem;
-        }
-    }
-
-    .card {
-        padding: 1rem 0;
-        min-width: 18rem;
-        max-width: 21rem;
-        min-height: 21rem;
-        border-radius: 30px;
-
-        img {
-            max-width: clamp(8rem, 20vw, 15rem);
-            margin-bottom: 1rem;
-        }
-
-        h3 {
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin-inline: 2rem;
-            margin-bottom: 1rem;
-        }
-    }
-
-    .resume {
-        h1 {
-            margin-top: 8rem;
-        }
-
-        li {
-            margin-inline-start: 1rem;
-        }
-    }
+  }
 }
 
 @media (min-width: $breakpoint-mobile) {
-    h1 { font-size: 5rem; }
-    h2 { font-size: 4rem; }
-    h3 { font-size: 2.5rem; }
+  h1 {
+    font-size: 5rem;
+  }
 
-    .navbar-show,
-    .navbar-close {
-        display: none;
+  h2 {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  .navbar-show,
+  .navbar-close {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin-inline: clamp(10%, 33%, 40%);
+    background: linear-gradient(100deg, $clr-neutral-200-trsp, $clr-neutral-300-trsp);
+    backdrop-filter: blur(8px);
+    padding-block: 1rem;
+    margin: 2rem 0;
+    border-radius: 30px;
+    transition: 850ms;
+    z-index: 9999;
+
+    li {
+      margin-inline-end: 2rem;
+      background: linear-gradient($clr-accent-100 0 0) bottom left/ var(--underline-width, 0%) 0.1em
+        no-repeat;
+      display: inline;
+      text-decoration: none;
+      transition: background-size 0.5s;
+
+      &:hover {
+        --underline-width: 100%;
+      }
+
+      span {
+        margin-left: 8px;
+      }
     }
+  }
 
-    .nav-menu {
-        display: flex;
-        list-style: none;
-        justify-content: center;
-        margin-inline: clamp(10%, 33%, 40%);
-        background: linear-gradient(100deg, $clr-neutral-200-trsp, $clr-neutral-300-trsp);
-        backdrop-filter: blur(8px);
-        padding-block: 1rem;
-        margin: 2rem 0;
-        border-radius: 30px;
-        transition: 850ms;
-        z-index: 9999;
+  .header-home {
+    margin-top: 4rem;
 
-        li {
-            margin-inline-end: 2rem;
-            background: linear-gradient($clr-accent-100 0 0) bottom left/ var(--underline-width, 0%) 0.1em no-repeat;
-            display: inline;
-            text-decoration: none;
-            transition: background-size 0.5s;
-
-            &:hover {
-                --underline-width: 100%;
-            }
-
-            span {
-                margin-left: 8px;
-            }
-        }
+    .link-btn * {
+      font-size: 2.5rem;
     }
+  }
 
-    .header-home {
-        margin-top: 4rem;
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-block: 2rem;
 
-        .link-btn * {
-            font-size: 2.5rem;
-        }
+    .card {
+      min-width: 20rem;
+
+      h3 {
+        margin-top: 1rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        padding-inline: 2rem;
+      }
     }
+  }
 
-    .cards-container {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-block: 2rem;
-
-        .card {
-            min-width: 20rem;
-
-            h3 {
-                margin-top: 1rem;
-            }
-
-            p {
-                margin-bottom: 1rem;
-                padding-inline: 2rem;
-            }
-        }
-    }
-
-    .resume li {
-        margin-left: 3rem;
-    }
+  .resume li {
+    margin-left: 3rem;
+  }
 }
 
 @media (max-width: $breakpoint-tablet) {
-    .nav-menu {
-        margin-inline: clamp(10%, 20%, 25%);
-    }
+  .nav-menu {
+    margin-inline: clamp(10%, 20%, 25%);
+  }
 }
 
 @media (min-width: $breakpoint-mobile) and (max-width: $breakpoint-desktop) {
-    .cards-container {
-        display: grid;
-        justify-content: center;
-        margin-inline: auto;
-        grid: repeat(2, 24rem) / auto-flow 22rem;
-    }
+  .cards-container {
+    display: grid;
+    justify-content: center;
+    margin-inline: auto;
+    grid: repeat(2, 24rem) / auto-flow 22rem;
+  }
 }

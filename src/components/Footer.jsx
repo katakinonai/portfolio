@@ -2,7 +2,6 @@ import React from 'react';
 import Stars from '../images/stars.png';
 import LinkContainer from './LinkContainer';
 
-
 function Footer() {
   const currentDate = new Date().getFullYear();
   return (
